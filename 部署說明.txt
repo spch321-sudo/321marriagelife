@@ -1,0 +1,26 @@
+321婚姻生活 App v1.0 — 部署說明
+
+一、上傳
+1. 在 GitHub 建一個新 repo（建議 spch321-sudo/321marriagelife）。
+2. 把這個資料夾裏「所有檔案」直接上傳到 repo 根目錄（不要包一層資料夾；攤平上傳也可以）。
+3. Settings → Pages → Branch 選 main / root，儲存。約 1–2 分鐘後網址為：
+   https://spch321-sudo.github.io/321marriagelife/
+
+二、檔案
+index.html（主程式，含第 1 週第 1 課，可離線開啟）
+zh-s1～s5.json 繁體課程、zs-s1～s5.json 簡體課程、en-s1～s5.json 英文課程（各 52 週 260 課）
+lang-zs.json、lang-en.json 語言包；manifest.json、sw.js、version.json；圖示與 hero.jpg
+
+三、更新
+以後只要重新上傳新版檔案，App 會自動偵測 version.json 並更新；使用者正在上課時只顯示提示條，不打斷。
+
+四、iPhone 主畫面圖示
+apple-touch-icon.png（180×180）已放在根目錄並寫在 index.html。若曾加入過舊圖示，請先刪除主畫面捷徑再重新「加入主畫面」。
+
+五、外部服務（沿用 321 系列共用 Worker）
+小智：xiaozhi-proxy.spch321.workers.dev；朗讀：azure-tts.spch321.workers.dev
+新網域若需加入 Worker 的允許清單，請一併設定。
+
+六、夫妻同步（v1.0 作法）
+資料只存在各自手機。夫妻對談、我看見了、約會邀請、和好的話，都用「傳給配偶」分享（LINE／訊息）。
+雲端即時同步（Cloudflare Worker＋D1、端對端加密）列在 v2.0。
